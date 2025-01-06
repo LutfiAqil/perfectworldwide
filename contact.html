@@ -44,12 +44,15 @@
         color: #0d6efd !important;
       }
 
-      /* Dropdown menu improvement */
-      .nav-item.dropdown:hover .dropdown-menu {
+      .navbar-nav .nav-item.dropdown:hover .dropdown-menu {
         display: block;
         opacity: 1;
-        visibility: visible; /* Ensure the dropdown menu is visible when hovering */
-        transition: opacity 0.3s ease, visibility 0s ease 0.3s; /* Smooth transition for visibility */
+        visibility: visible; /* Ensure it's always visible */
+        position: absolute; /* Absolute positioning to place it right below the navbar */
+        top: 100%; /* Align the top of the dropdown to the bottom of the navbar */
+        left: 0; /* Align the left of the dropdown with the left of the navbar item */
+        margin-top: 0; /* Remove extra space above */
+        padding-top: 5px; /* Add a slight padding at the top for aesthetics */
       }
 
       .dropdown-menu {
@@ -58,9 +61,7 @@
         border: none;
         background-color: #ffffff;
         padding: 10px 0;
-        margin-top: 10px;
-        transition: opacity 0.3s ease;
-        visibility: hidden; /* Initially hide the dropdown */
+        margin-top: 0; /* Remove margin so it stays closer to the navbar */
       }
 
       .dropdown-menu a {
