@@ -126,35 +126,57 @@
         margin-bottom: 30px; /* Space below the paragraph */
       }
 
+      /* Button styling */
       .hero .btn {
         position: relative;
-        display: inline-block;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
         font-size: 1.2rem;
         padding: 12px 30px;
-        transition: all 0.3s ease;
+        border: 2px solid transparent;
+        border-radius: 30px;
+        background-color: #ffffff;
+        color: #000000;
+        text-decoration: none;
         overflow: hidden;
-        background-color: #ffffff; /* Default button background */
-        color: #000000; /* Default text color */
+        transition: all 0.3s ease-in-out;
       }
 
-      .hero .btn::after {
-        content: "→";
-        position: absolute;
-        right: -30px;
-        opacity: 0;
-        transition: all 0.3s ease;
-      }
-
-      .hero .btn:hover::after {
-        right: 10px; /* Move the arrow into view */
+      .hero .btn .btn-text {
         opacity: 1;
+        transition: opacity 0.3s ease-in-out;
+      }
+
+      .hero .btn .btn-arrow {
+        position: absolute;
+        right: 20px;
+        opacity: 1;
+        transition: opacity 0.3s ease-in-out, right 0.3s ease-in-out;
+      }
+
+      .hero .btn:hover .btn-text {
+        opacity: 0; /* Hide text on hover */
+      }
+
+      .hero .btn:hover .btn-arrow {
+        opacity: 0; /* Hide the arrow */
+        right: 10px; /* Move arrow closer */
       }
 
       .hero .btn:hover {
-        background-color: #f8f9fa; /* Change background color on hover */
-        color: #212529; /* Darken text color on hover */
+        background-color: #9c9c9c;
+        color: #ffffff;
+        border-radius: 30px;
       }
 
+      .hero .btn:hover .btn-text {
+        opacity: 1; /* Show the text on hover */
+      }
+
+      .hero .btn:hover .btn-arrow {
+        opacity: 1; /* Show the arrow on hover */
+      }
       /* Footer Section */
       .footer .container {
         max-width: 1140px;
@@ -246,7 +268,11 @@
       <div class="container">
         <h1>Welcome to Perfect Worldwide Venture</h1>
         <p>Your trusted partner in business innovation.</p>
-        <a href="about.html" class="btn btn-light"> Learn More About Us </a>
+        <a href="about.html" class="btn btn-light">
+          <span class="btn-text">Learn More About Us</span>
+          <span class="btn-arrow">&#8594;</span>
+          <!-- Simple right arrow -->
+        </a>
       </div>
     </section>
 
